@@ -1,0 +1,52 @@
+ * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .container {
+        margin: auto;
+        background-color: lightgray;
+        width: 800px;
+        height: auto;
+        padding: 25px;
+        margin-top: 20px;
+        align-items: center;
+       
+    }
+
+    .btn {
+        padding: 5px;
+        margin-left: 100px;
+    }
+
+    input {
+        font-size: 17px;
+    }
+    tr td{
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .container h1 {
+        font-size: 25px;
+        align-items: center;
+    }
+
+    .container .pagination {   
+        display: inline-block;   
+    }   
+
+    .pagination a {   
+        font-weight:bold;   
+        font-size:18px;   
+        color: black;   
+        float: left;   
+        padding: 8px 16px;   
+        text-decoration: none;   
+        border:1px solid black;   
+    }   
+
+    .pagination a.active {
+        color: blue;
+        background-color: pink;
+    }
