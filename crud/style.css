@@ -32,11 +32,11 @@
         align-items: center;
     }
 
-    .container .pagination {   
+    .pagination-data {   
         display: inline-block;   
     }   
 
-    .pagination a {   
+    /*.pagination-data button {   
         font-weight:bold;   
         font-size:18px;   
         color: black;   
@@ -46,7 +46,7 @@
         border:1px solid black;   
     }   
 
-    .pagination a.active {
+    .pagination-data button .active {
         color: blue;
         background-color: pink;
-    }
+    }*/

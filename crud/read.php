@@ -1,10 +1,14 @@
 <?php
-        $limit = 4;
-        if(!isset($_GET['page'])){
+
+        include "dbconnection.php";
+        $obj = new dbconnection();
+        
+        $limit = 3;
+        if(!isset($_POST['page'])){
             $page = 1;
         }
         else{
-            $page = $_GET['page'];
+            $page = $_POST['page'];
         }
 
         $offset = ($page-1) * $limit;
@@ -29,9 +33,8 @@
                     echo "<td>" . $row['description'] . "</td>";
                     echo "<td>";
                         echo '<a href="update.php?id='. $row['id'] .'" class="mr-3" title="Update Record" data-toggle="tooltip">EDIT</a>&nbsp&nbsp';
-                    // echo "</td>";
-                    // echo "<td>";
-                        echo '<a href="index.php?id='. $row['id'] .'" title="Delete Record" data-toggle="tooltip">DELETE</a>';
+                        echo "<button class='btn btn-danger btn-del mx-2' data-id=".$row['id'].">Delete</button>";
+
                     echo "</td>";
                 echo "</tr>";
             $number++;
@@ -41,12 +44,13 @@
         echo "</table>";
         echo "<div class='pagination text-center'>";
             $pages = $obj->getPage($limit);
-            for($i = 1; $i <= $pages; $i++) {  
+            for($i = 1; $i <= $pages; $i++) { 
                 if ($i == $page) {   
-                    echo "<a class = 'active' href='index.php?page=".$i."'>".$i." </a>";   
+                    echo "<button class='btn btn-success pagination_link mx-2' id=".$i.">".$i."</button>";
                 }               
                 else {   
-                    echo "<a href='index.php?page=".$i."'>".$i." </a>";     
+                    echo "<button class='btn btn-danger pagination_link mx-2' id=".$i.">".$i."</button>";
+
                 }   
             }  
         echo "</div>";            

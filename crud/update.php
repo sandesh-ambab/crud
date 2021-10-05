@@ -1,11 +1,11 @@
 <?php 
 include 'dbconnection.php'; 
 $obj = new dbconnection();
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $data = $obj->read($id);
 }
-
 
 if(isset($_POST['update'])){
     $id = $_GET['id'];

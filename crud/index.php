@@ -1,9 +1,4 @@
 
-<?php 
-    include "dbconnection.php";
-    $obj = new dbconnection();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,26 +13,20 @@
     <div class="container text-center bg-light mt-3"> 
         
         <h1 class="bg-dark text-light">CRUD Operations using PHP</h1><br>
-        <form action="index.php" method="POST">
-
+        <form id="crud" method="POST">
             <input type="text" class= "text-center" name="name" id="name" placeholder="Your name" required>
-            <input type="text" class= "text-center" name="description" placeholder="Your description" required>
-            <button class="btn btn-primary" type="submit" name= "submit">ADD</button><br><br>
+            <input type="text" class= "text-center" name="description" id="description" placeholder="Your description" required>
+            <button class="btn btn-primary" id="submit" type="submit" name= "submit">ADD</button><br><br>
 
         </form>
-    <?php 
-       require_once('create.php');
-    ?>
-    <?php 
-        require_once('read.php');
-    ?>
-    <?php 
-        require_once('delete.php');
-    ?> 
-   
+    <div id="msg"></div>
+    <div id="pagination"></div>
    
                 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="crudajax.js"></script>
+    
 </body>
 </html>
 

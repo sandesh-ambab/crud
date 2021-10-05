@@ -1,15 +1,14 @@
 <?php 
-
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    try{
-        $obj->delete($id);
-        echo "Data deleted";
-        header("location: index.php");
+include "dbconnection.php";
+$obj = new dbconnection();
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+    if($obj->delete($id)){
+        echo 1;
+    }else{
+        echo 0;
     }
-    catch(Exception $e){
-        echo $e->getMessage();
-    }
+    exit();
 }
 
 ?>
